@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 import 'package:tquiz/components/toolbar.dart';
+import 'package:tquiz/providers/app_provider.dart';
 
 import '../config/app_routes.dart';
 
@@ -10,22 +12,22 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: Toolbar(title: 'Quiz'),
+      appBar: const Toolbar(title: 'Quiz'),
       body: Center(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Column(
               children: [
-                Divider(),
+                const Divider(),
                 ElevatedButton(
                   onPressed: () {
                     HapticFeedback.mediumImpact();
                     Navigator.of(context).pushNamed(AppRoutes.quiz);
                   },
-                  child: const Text('Start Quiz'),
+                  child: Text('Start Quiz'),
                 ),
-                Divider(),
+                const Divider(),
                 ElevatedButton(
                   onPressed: () {
                     HapticFeedback.selectionClick();

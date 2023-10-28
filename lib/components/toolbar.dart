@@ -8,6 +8,8 @@ class Toolbar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      elevation: 4,
+      shadowColor: Theme.of(context).shadowColor,
       title: Text(title)
     );
   }

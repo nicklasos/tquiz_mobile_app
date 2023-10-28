@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:tquiz/components/toolbar.dart';
 
 import '../config/app_routes.dart';
@@ -14,9 +15,25 @@ class HomePage extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(
-              onPressed: () => Navigator.of(context).pushNamed(AppRoutes.quiz),
-              child: const Text('Start Quiz'),
+            Column(
+              children: [
+                Divider(),
+                ElevatedButton(
+                  onPressed: () {
+                    HapticFeedback.mediumImpact();
+                    Navigator.of(context).pushNamed(AppRoutes.quiz);
+                  },
+                  child: const Text('Start Quiz'),
+                ),
+                Divider(),
+                ElevatedButton(
+                  onPressed: () {
+                    HapticFeedback.selectionClick();
+                    Navigator.of(context).pushNamed(AppRoutes.haptic);
+                  },
+                  child: const Text('Haptic Test'),
+                ),
+              ],
             ),
           ],
         ),

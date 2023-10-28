@@ -8,7 +8,7 @@ class QuizPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       appBar: Toolbar(
-        title: 'Quiz',
+        title: 'Play',
       ),
       body: Center(
         child: Row(
